@@ -66,7 +66,7 @@ module Rolify
     end
 
     def role_table_missing?(role_class)
-      !role_class.table_exists?
+      role_class.connected? && !role_class.table_exists?
     end
   end
 end
